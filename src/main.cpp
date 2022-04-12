@@ -2,10 +2,7 @@
 
 void sign_up_process(student& st);
 void getlessons_info_process(lessons& ls);
-void to_json(nlohmann::json& j, student& st, lessons& ls);
-//void from_json(const nlohmann::json& j, student& st);
-void write_data(nlohmann::json& j);
-void get_data();
+void log_in_process();
 
 
 int main() {
@@ -16,11 +13,9 @@ int main() {
 	sign_up_process(st);
 	getlessons_info_process(ls);
 	
-	nlohmann::json j;
+
+	ls.toJSON(st, ls);
 	
-	to_json(j, st, ls);
-	write_data(j);
-	get_data();
 
 
 	return 0;
